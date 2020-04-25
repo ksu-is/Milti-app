@@ -98,6 +98,17 @@ WIN_LIST_RPSLS = [('ROCK', 'SCISSORS'), ('ROCK', 'LIZARD'),  # who can be defeat
 #  list of selections
 SELECTIONS_LIST_RPSLS = ['ROCK','PAPER','SCISSORS','LIZARD','SPOCK']
 
+#  Corona version
+#  tuples list of win combinations
+WIN_LIST_RPSLS = [('CORONA', 'STUPID'), ('CORONA', 'NO MASK'),  # who can be defeated by CORONA
+                  ('MASK', 'CORONA'), ('MASK', 'NO MASK'), # who can be defeated by MASK
+                  ('NO MASK', 'STUPID')]  # who can be defeated by NO MASK
+                  
+
+#  list of selections
+SELECTIONS_LIST_RPSLS = ['CORONA','MASK','NO MASK','STUPID']
+
+
 #  dictionary that saves wins of both player and computer, and ties
 stats_count = {'player':0, 'computer':0, 'ties':0}
 
@@ -116,7 +127,8 @@ def RPS():
         "-------------- Welcome to my Rock-Paper-Scissors based Games ------------------"
         "\n  [1] - (Classic) Rock Paper Scissors                                          "
         "\n  [2] - (Expansion) Rock Paper Scissors Lizard Spock                           "
-        "\n  [3] - Home                                                                   "                   
+        "\n  [3] - (NEW) CORONA 2020                                                      "
+        "\n  [4] - Home                                                                   "                   
         "\n-------------------------------------------------------------------------------"
         "\n Please select an option (1, 2, or 3): ")
         if option == '1' or option == '2' or option == '3':  #  if options 1, 2 or 3 are selected, it will call lets_play function
@@ -164,6 +176,22 @@ def lets_play(option):
     selections_list = SELECTIONS_LIST_RPSLS  #  selections are assigned based on the game
     win_list = WIN_LIST_RPSLS  #  win list is assigned based on the game
   
+  elif option == '3':  #  if option 2 is selected, it will play Rock + Paper + Scissors + Lizard + Spock game
+    intro = (" Welcome to Rock + Paper + Scissors: Corona Edition!")
+    option_help = ("\n This game is simple and goes as following:"
+          "\n *You can choose between: Corona, Mask, Stupid, No mask, Home, and Soap."
+          "\n\n You must take in consideration that:"
+          "\n *Corona defeats Stupid and No mask."
+          "\n *Mask defeats Corona and Stupid."
+          "\n *Stupid defeats No Mask."
+          "\n Mask cannot be defeated."
+          "\n\n Notes: *The first one that scores 5 points WINS the game!"
+          "\n        *If you forgot the rules, just type 'help'."
+          "\n        *If you want to go to main menu to try the other games, just type 'quit'."
+          "\n        *If you want to exit because you're afraid of loosing, just type 'exit' you coward!\n")
+    selections_list = SELECTIONS_LIST_RPSLS  #  selections are assigned based on the game
+    win_list = WIN_LIST_RPSLS  #  win list is assigned based on the game
+  
       
   print(intro)  #  displays the intro information based on the option selected
   print(option_help)  # displays the help information based on the option selected
@@ -196,10 +224,10 @@ def lets_play(option):
             "\n-----------------------".format(**stats_count))
       if stats_count['player'] == 5:  #  if player gets 5 points, he wins
         print("The game is DONE! You won! Congratulations!")
-        exit()
+        restart()
       elif stats_count['computer'] == 5:  #  if computer gets 5 points, he wins
         print("The game is DONE! You lost against a perfectly designed AI! You're now in the wall of shame!")
-        exit()
+        restart()
     elif player_selection == 'HELP':  #  if the user doesn't remember the rules, it will show them again
       clrscr()
       print(option_help)
@@ -234,6 +262,7 @@ def restart():
     
 
 def main_code():
+    clrscr()
     print("Do you want to play a game? (yes/no)")
     print()
     answer = input()
