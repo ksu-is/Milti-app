@@ -3,48 +3,32 @@ import os
 import sys
 from time import *
 
-answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes – definitely', 'You may rely on it', 'My sources say no', 'Outlook not so good', 'Very doubtful']
-def Magic8Ball():
-    print('What is your question? (q to quit) ')
-    print()
-    reply = input()
-    if reply == "q":
-        restart()
-    else:
-        print(reply)
-        print (answers[random.randint(0, len(answers)-1)] )
-        print()
-        Replay()
-    
-def Replay():
-    Magic8Ball()
+#MadLib Story Time
+#Credit to 
 
 def madlibs():
-    adjective1=input("type an adjective: ")
-    adjective2=input("type an adjective: ")
-    noun1=input("type a noun: ")
-    noun2=input("type a noun: ")
-    pluralnoun1=input("type a plural noun: ")
-    game=input("name a game: ")
-    pluralnoun2=input("type a plural noun: ")
-    verb1=input("type a verb ending in 'ing': ")
-    verb2=input("type a verb ending in 'ing': ")
-    pluralnoun3=input("type a plural noun: ")
-    verb3=input("type a verb ending in 'ing': ")
-    noun3=input("type a noun: ")
-    plant=input("name a type of plant: ")
-    partofbody=input("name a body part: ")
-    place=input("name a place: ")
-    verb4=input("type a verb ending in 'ing': ")
-    adjective3=input("name a adjective: ")
-    number=input("type a number: ")
-    pluralnoun4=input("type a plural noun: ")
+    name=input("Enter a name: ")
+    name2=input("Enter another name: ")
+    name3=input("Enter another name: ")
+    number=input("Enter a number: ")
+    object1=input("Enter an object: ")
+    object2=input("Enter an object: ")
+    object3=input("Enter an object: ")
+    car=input("Enter a type of vehicle: ")
+    time2=input("Enter a number: ")
+    location=input("Enter a vacation spot: ")
+    sport=input("Enter a sport: ")
+    funactivity=input("Enter a fun activity: ")
+    relaxingactivity=input("Enter a relaxing activity: ")
+    food=input("Enter a food: ")
+    verb=input("Enter a verb ending in 'ing': ")
+    verb2=input("Enter a verb ending in 'ing': ")
     print()
-    print("A vacation is when you take a trip to some", adjective1, "place with your", adjective2, "family.\nUsually you go to some place that is near a/an", noun1, "or up on a/an", noun2,".\nA good vacation place is one where you can ride", pluralnoun1, "or play", game,"or go hunting for",pluralnoun2,".\nI like to spend my time", verb1, "or", verb2,".\nWhen parents go on vacation, they spend their time eating three", pluralnoun3, "a day, and fathers play golf, and mothers sit around", verb3,".\nLast summer, my little brother fell in a/an", noun3, "and got poison", plant, "all over his", partofbody,".\nMy family is going to go to the", place, ", and I will practice" ,verb4,".\nParents need vacations more than kids because parents are always very", adjective3, "and because they have to work", number,"hours every day all year making enough", pluralnoun4, "to pay for the vacation.")
+    print("It’s your favorite time of the year! You,", name, name2, "and", name3, "finally get to go on your trip! You all have been waiting", number, "days for this! The night before you leave you check to make sure you have", object1, object2, "and", object3, "packed! You are always forgetting", object2, "on every trip you go on.", name, name2, "and", name3, "show up at your house the next morning. You all get in a", car, "and start your", time2, "hour long drive to", location, "schedule in hand, you look over all the things planned, which include,", sport, funactivity,  relaxingactivity, "and eating lots of", food, "It is going to be a long trip, so you hope there's no", verb, "or", verb2, "Hope you have a great vacation!")
     print()
-    restart()
+    madlibs_start()
 
-def madlib2():
+def madlibs2():
     item=input("Enter an object: ")
     person=input("Enter a person: ")
     activity1=input("Enter an activity: ")
@@ -59,9 +43,11 @@ def madlib2():
     print()
     print("It is the year 2020. A new virus called Corona has taken over the", item,".", person, "has told you today is your last day of freedom. What will you do? You decide to go", activity1, "drive to", state, "and go", activity2, ". Fast forward....... it is", time, "o’clock. You last adventure for the day is dinner with" ,name2, name3, "and", name4, ". You all go to restaurant and order", number, "of everything on the menu! As the day come to an end you decide to take a risk and", action, "a puppy! *Gasp* Well hopefully you enjoyed your freedom!")
     print()
-    restart()
+    madlibs_start()
+
 
 def madlibs_start():
+    clrscr()
     print ("Pick a story")
     print()
     print ("Funny vacation story: press 1")
@@ -77,10 +63,14 @@ def madlibs_start():
         clrscr()
         restart()
     else:
-        print("Pick a number or q to quit.")
+        main_code()
+
+
+#Rock, Paper Scissors
+#Credit to Juan Martin 
 
 #  classic game - Rock, Paper, Scissors
-#  tuples list of win combinations
+#list of win combinations
 WIN_LIST_RPS = [('ROCK', 'SCISSORS'),  # who can be defeated by ROCK
                 ('SCISSORS', 'PAPER'),  # who can be defeated by SCISSORS
                 ('PAPER', 'ROCK')]  # who can be defeated by PAPER
@@ -88,7 +78,7 @@ WIN_LIST_RPS = [('ROCK', 'SCISSORS'),  # who can be defeated by ROCK
 SELECTIONS_LIST_RPS = ['ROCK', 'PAPER', 'SCISSORS']
 
 #  an expansion of classic game - Rock, Paper, Scissors, Lizard, Spock
-#  tuples list of win combinations
+#  list of win combinations
 WIN_LIST_RPSLS = [('ROCK', 'SCISSORS'), ('ROCK', 'LIZARD'),  # who can be defeated by ROCK
                   ('SCISSORS', 'LIZARD'), ('SCISSORS', 'PAPER'),  # who can be defeated by SCISSORS
                   ('LIZARD', 'PAPER'), ('LIZARD', 'SPOCK'),  # who can be defeated by LIZARD
@@ -124,7 +114,7 @@ def RPS():
     clrscr()
     while True:
         option = input(
-        "-------------- Welcome to my Rock-Paper-Scissors based Games ------------------"
+        "------------------- Welcome to the Rock-Paper-Scissors Games --------------------"
         "\n  [1] - (Classic) Rock Paper Scissors                                          "
         "\n  [2] - (Expansion) Rock Paper Scissors Lizard Spock                           "
         "\n  [3] - (NEW) CORONA 2020                                                      "
@@ -135,7 +125,7 @@ def RPS():
             lets_play(option)
         elif option == '4':  # if option is 4, exits the program
             print("Bye bye")
-            exit()
+            main_code()
         else:  #  if there's an invalid option, the menu will start again
             input("Invalid option. Try again... Please press ENTER to continue")
             clrscr()
@@ -244,6 +234,7 @@ def lets_play(option):
     else:
       print("Invalid selection. Try again...")  #  if there's an invalid choice, the input will show again
 
+#Restart function to bring user to the home selection
 def restart():
         print("Choose 1: - Magic 8 | 2 -  MadLib | 3 - Rock, Paper, Scissors! | q - quit")
 
@@ -260,7 +251,27 @@ def restart():
         else:
             quit
     
+#Code for The Magic 8 Ball 
+# Credit to Viljo Wilding
 
+answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes – definitely', 'You may rely on it', 'My sources say no', 'Outlook not so good', 'Very doubtful', 
+  'Are you sure about that?', "You Have To Wait And See!", "According to the wheather man....no", ]
+def Magic8Ball():
+    print('What is your question? (q to quit) ')
+    print()
+    reply = input()
+    if reply == "q":
+        restart()
+    else:
+        print(reply)
+        print (answers[random.randint(0, len(answers)-1)] )
+        print()
+        Replay()
+    
+def Replay():
+    Magic8Ball()
+
+#Main Code 
 def main_code():
     clrscr()
     print("Do you want to play a game? (yes/no)")
@@ -280,11 +291,6 @@ def main_code():
             print('')
             print('')
             print('')
-            print('I am the Magic 8 Ball, What is your name?')
-            print()
-            name = input()
-            print('hello ' + name)
-
             Magic8Ball()
         elif choice == "2":
             madlibs_start()
