@@ -24,7 +24,11 @@ def madlibs():
     verb=input("Enter a verb ending in 'ing': ")
     verb2=input("Enter a verb ending in 'ing': ")
     print()
-    print("It’s your favorite time of the year! You,", name, name2, "and", name3, "finally get to go on your trip! You all have been waiting", number, "days for this! The night before you leave you check to make sure you have", object1, object2, "and", object3, "packed! You are always forgetting", object2, "on every trip you go on.", name, name2, "and", name3, "show up at your house the next morning. You all get in a", car, "and start your", time2, "hour long drive to", location, "schedule in hand, you look over all the things planned, which include,", sport, funactivity,  relaxingactivity, "and eating lots of", food, "It is going to be a long trip, so you hope there's no", verb, "or", verb2, "Hope you have a great vacation!")
+    print("It’s your favorite time of the year! You,", name, name2, "and", name3, "finally get to go on your trip! You all have been waiting", number, 
+          "days for this! The night before you leave you check to make sure you have", object1, object2, "and", object3, "packed! You are always forgetting", 
+          object2, "on every trip you go on.", name, name2, "and", name3, "show up at your house the next morning. You all get in a", car, "and start your", time2, 
+          "hour long drive to", location, "schedule in hand, you look over all the things planned, which include,", sport, funactivity,  relaxingactivity, 
+          "and eating lots of", food, "It is going to be a long trip, so you hope there's no", verb, "or", verb2, "Hope you have a great vacation!")
     print()
     restart()
 
@@ -41,7 +45,10 @@ def madlibs2():
     number=input("Enter a number: ")
     action=input("Entery an action: ")
     print()
-    print("It is the year 2020. A new virus called Corona has taken over the", item,".", person, "has told you today is your last day of freedom. What will you do? You decide to go", activity1, "drive to", state, "and go", activity2, ". Fast forward....... it is", time, "o’clock. You last adventure for the day is dinner with" ,name2, name3, "and", name4, ". You all go to restaurant and order", number, "of everything on the menu! As the day come to an end you decide to take a risk and", action, "a puppy! *Gasp* Well hopefully you enjoyed your freedom!")
+    print("It is the year 2020. A new virus called Corona has taken over the", item,".", person, 
+          "has told you today is your last day of freedom. What will you do? You decide to go", activity1, "drive to", state, "and go", activity2, 
+          ". Fast forward....... it is", time, "o’clock. You last adventure for the day is dinner with" ,name2, name3, "and", name4, ". You all go to restaurant and order", 
+          number, "of everything on the menu! As the day come to an end you decide to take a risk and", action, "a puppy! *Gasp* Well hopefully you enjoyed your freedom!")
     print()
     restart()
 
@@ -51,8 +58,7 @@ def madlibs_start():
     print ("Pick a story")
     print()
     print ("Funny vacation story: press 1")
-    print ("Worst bedtime story: press 2")
-    print("Conrona: press 4 ")
+    print ("Last day of freedom: press 2")
     print("Quit: press q")
     story = input('story: ')
     if story == '1': 
