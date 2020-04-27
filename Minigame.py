@@ -26,7 +26,7 @@ def madlibs():
     print()
     print("It’s your favorite time of the year! You,", name, name2, "and", name3, "finally get to go on your trip! You all have been waiting", number, "days for this! The night before you leave you check to make sure you have", object1, object2, "and", object3, "packed! You are always forgetting", object2, "on every trip you go on.", name, name2, "and", name3, "show up at your house the next morning. You all get in a", car, "and start your", time2, "hour long drive to", location, "schedule in hand, you look over all the things planned, which include,", sport, funactivity,  relaxingactivity, "and eating lots of", food, "It is going to be a long trip, so you hope there's no", verb, "or", verb2, "Hope you have a great vacation!")
     print()
-    madlibs_start()
+    restart()
 
 def madlibs2():
     item=input("Enter an object: ")
@@ -43,7 +43,7 @@ def madlibs2():
     print()
     print("It is the year 2020. A new virus called Corona has taken over the", item,".", person, "has told you today is your last day of freedom. What will you do? You decide to go", activity1, "drive to", state, "and go", activity2, ". Fast forward....... it is", time, "o’clock. You last adventure for the day is dinner with" ,name2, name3, "and", name4, ". You all go to restaurant and order", number, "of everything on the menu! As the day come to an end you decide to take a risk and", action, "a puppy! *Gasp* Well hopefully you enjoyed your freedom!")
     print()
-    madlibs_start()
+    restart()
 
 
 def madlibs_start():
@@ -255,7 +255,7 @@ def restart():
 # Credit to Viljo Wilding
 
 answers = ['It is certain', 'It is decidedly so', 'Without a doubt', 'Yes – definitely', 'You may rely on it', 'My sources say no', 'Outlook not so good', 'Very doubtful', 
-  'Are you sure about that?', "You Have To Wait And See!", "According to the wheather man....no", ]
+  'Are you sure about that?', "You Have To Wait And See!", "According to the wheather man....no","Excuse me? I think NOT", "In your dreams!" ]
 def Magic8Ball():
     print('What is your question? (q to quit) ')
     print()
@@ -263,7 +263,7 @@ def Magic8Ball():
     if reply == "q":
         restart()
     else:
-        print(reply)
+        print()
         print (answers[random.randint(0, len(answers)-1)] )
         print()
         Replay()
@@ -300,8 +300,9 @@ def main_code():
             exit()
         else:
             print("Enter vaild number")
-    elif answer.lower() == "no":
+    elif answer.lower() == "no" or answer.lower() == "n":
         print("Okay")
+        exit()
     else:
         print("Please enter yes or no.")
 
