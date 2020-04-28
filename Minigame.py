@@ -4,8 +4,6 @@ import sys
 from time import *
 
 #MadLib Story Time
-#Credit to 
-
 def madlibs():
     name=input("Enter a name: ")
     name2=input("Enter another name: ")
@@ -96,14 +94,13 @@ SELECTIONS_LIST_RPSLS = ['ROCK','PAPER','SCISSORS','LIZARD','SPOCK']
 
 #  Corona version
 #  tuples list of win combinations
-WIN_LIST_RPSLS = [('CORONA', 'STUPID'), ('CORONA', 'NO MASK'),  # who can be defeated by CORONA
+WIN_LIST_CORONA = [('CORONA', 'STUPID'), ('CORONA', 'NO MASK'),  # who can be defeated by CORONA
                   ('MASK', 'CORONA'), ('MASK', 'NO MASK'), # who can be defeated by MASK
                   ('NO MASK', 'STUPID')]  # who can be defeated by NO MASK
                   
 
 #  list of selections
-SELECTIONS_LIST_RPSLS = ['CORONA','MASK','NO MASK','STUPID']
-
+SELECTIONS_LIST_CORONA = ['CORONA','MASK','NO MASK','STUPID']
 
 #  dictionary that saves wins of both player and computer, and ties
 stats_count = {'player':0, 'computer':0, 'ties':0}
@@ -185,8 +182,8 @@ def lets_play(option):
           "\n        *If you forgot the rules, just type 'help'."
           "\n        *If you want to go to main menu to try the other games, just type 'quit'."
           "\n        *If you want to exit because you're afraid of loosing, just type 'exit' you coward!\n")
-    selections_list = SELECTIONS_LIST_RPSLS  #  selections are assigned based on the game
-    win_list = WIN_LIST_RPSLS  #  win list is assigned based on the game
+    selections_list = SELECTIONS_LIST_CORONA  #  selections are assigned based on the game
+    win_list = WIN_LIST_CORONA  #  win list is assigned based on the game
   
       
   print(intro)  #  displays the intro information based on the option selected
@@ -219,10 +216,10 @@ def lets_play(option):
             "\n  {player}        {computer}        {ties}"
             "\n-----------------------".format(**stats_count))
       if stats_count['player'] == 5:  #  if player gets 5 points, he wins
-        print("The game is DONE! You won! Congratulations!")
+        print("You won! Congratulations!")
         restart()
       elif stats_count['computer'] == 5:  #  if computer gets 5 points, he wins
-        print("The game is DONE! You lost against a perfectly designed AI! You're now in the wall of shame!")
+        print("You lost against a perfectly designed AI! You're now on the wall of shame!")
         restart()
     elif player_selection == 'HELP':  #  if the user doesn't remember the rules, it will show them again
       clrscr()
@@ -232,30 +229,14 @@ def lets_play(option):
       stats_count['computer'] = 0
       stats_count['ties'] = 0
       input("Let's try another game mode then. I hope you enjoyed! Please press ENTER to continue...")
-      clrscr()
+      print()
+      restart()
       break
     elif player_selection == 'EXIT':  #  if the user wants to exit the game
       print("Bye bye... YOU COWARD!")
       exit()
     else:
       print("Invalid selection. Try again...")  #  if there's an invalid choice, the input will show again
-
-#Restart function to bring user to the home selection
-def restart():
-        print("Choose 1: - Magic 8 | 2 -  MadLib | 3 - Rock, Paper, Scissors! | q - quit")
-
-        choice = input()
-        if choice == "1":
-            Magic8Ball()
-        elif choice == "2":
-            madlibs_start()
-        elif choice == "3":
-            RPS()
-        elif choice == "q":
-            print("Byeeeeeee")
-            exit()
-        else:
-            quit
     
 #Code for The Magic 8 Ball 
 # Credit to Viljo Wilding
@@ -277,6 +258,24 @@ def Magic8Ball():
 def Replay():
     Magic8Ball()
 
+
+#Restart function to bring user to the games selection
+def restart():
+        print("Choose 1: - Magic 8 | 2 -  MadLib | 3 - Rock, Paper, Scissors! | q - quit")
+
+        choice = input()
+        if choice == "1":
+            Magic8Ball()
+        elif choice == "2":
+            madlibs_start()
+        elif choice == "3":
+            RPS()
+        elif choice == "q":
+            print("Byeeeeeee")
+            exit()
+        else:
+            quit
+
 #Main Code 
 def main_code():
     clrscr()
@@ -284,6 +283,7 @@ def main_code():
     print()
     answer = input()
     if answer.lower() == "yes" or answer.lower() == "y":
+        print()
         print("Choose: 1 - Magic 8 | 2 -  MadLib | 3 - Rock, Paper, Scissors! | q - quit")
 
         choice = input()
